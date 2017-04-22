@@ -1,0 +1,1 @@
+This is where the project set the mongodb path using "mongod --dbpath='path to the data folder'"
