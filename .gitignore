@@ -1,4 +1,5 @@
-# specific to this project
+## Certificate Signing configuration
+
 *.csr
 *.pem
 *.key
