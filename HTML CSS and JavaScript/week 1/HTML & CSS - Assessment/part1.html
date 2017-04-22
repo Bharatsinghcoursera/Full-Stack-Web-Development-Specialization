@@ -1,0 +1,72 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>Part 1 of the Assessment</title>
+    </head>
+    <body>
+        <h1>Please Enter Your Details For Our Dating Website!</h1>
+        <form action="http://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" method="post" enctype="multipart/form-data">
+            <fieldset>
+                <legend>Your Face</legend>
+                <label for="avatar">Your Image:</label>
+                <input type="file" id="avatar" name="avatar" required>
+                <br>
+                <label for="preview">Image preview:</label>
+                <img id="preview">
+            </fieldset>
+            <fieldset>
+                <legend>Your General Details</legend>
+                <label for="name">Name:</label>
+                <input id="name" type="text" name="name" required>
+                <br>
+                <label>Gender:</label>
+                <input id="genderM" type="radio" name="gender" value="Male" required> <label for="genderM">Male</label>
+                <input id="genderF" type="radio" name="gender" value="Female" required> <label for="genderF">Female</label>
+                <br>
+                <label for="age">Age:</label>
+                <input id="age" type="number" name="age" required>
+                <br>
+                <label for="dateOfBirth">Date of birth:</label>
+                <input id="dateOfBirth" type="date" name="dateOfBirth">
+                <br>
+                <label for="favoriteColor">Favorite color:</label>
+                <input id="favoriteColor" type="color" name="favoriteColor">
+                <br>
+                <label for="country">Which country:</label>
+                <select id="country" name="country">
+                    <option value=""></option>
+                    <option value="Spain">Spain</option>
+                    <option value="Scotland">Scotland</option>
+                    <option value="Portugal">Portugal</option>
+                    <option value="France">France</option>
+                    <option value="Italy">Italy</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend>Your Indicators</legend>
+                <label for="height">Height:</label>
+                Short <input id="height" type="range" name="height" min="0" max="100" value="50"> Tall
+                <br>
+                <label for="salary">Salary:</label>
+                Poor <input id="salary" type="range" name="salary" min="0" max="100" value="50"> Rich
+            </fieldset>
+            <fieldset>
+                <legend>Your Contact Information</legend>
+                <label for="email">Email:</label>
+                <input id="email" type="email" name="email" required>
+                <br>
+                <label for="mobile">Mobile:</label>
+                <input id="mobile" type="tel" name="mobile">
+                <br>
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="3" cols="30"></textarea>
+                <br>
+                <label>Method to contact you:</label>
+                <input id="contactE" type="checkbox" name="contact" value="email"> <label for="contactE">Email</label>
+                <input id="contactW" type="checkbox" name="contact" value="whatsapp"> <label for="contactW">Whatsapp</label>
+                <input id="contactC" type="checkbox" name="contact" value="chat"> <label for="contactC">In-app chat</label>
+            </fieldset>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>
