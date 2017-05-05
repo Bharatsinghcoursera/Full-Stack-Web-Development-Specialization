@@ -38,8 +38,11 @@
                     myBody.style.background=target;
                     return true;
                 }
-            }
+            };
+
             function do_game(){
+                alert(target);
+
                 do{
                     guesses++;
                     var guess_input = prompt(
@@ -48,7 +51,8 @@
                         "What color am I thinking of?"
                     );
                     finished = check_guess(guess_input);
-                } while(!finished)
+                } while(!finished);
+
                 setTimeout(function() {
                     alert(
                         "Congratulations! You have guessed the color!\n\n"+
@@ -57,7 +61,7 @@
                     )
                 }, 10);
                 
-            }
+            };
         </script>
     </body>
 </html>
