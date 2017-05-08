@@ -77,6 +77,6 @@ typings/
 *.lock
 *.bson
 *.turtle
-Server-side Development with NodeJS/mongodb/data/diagnostic.data
-Server-side Development with NodeJS/mongodb/data/journal
-Server-side Development with NodeJS/mongodb/data/WiredTiger
+*/mongodb/data/diagnostic.data
+*/mongodb/data/journal
+*/mongodb/data/WiredTiger
