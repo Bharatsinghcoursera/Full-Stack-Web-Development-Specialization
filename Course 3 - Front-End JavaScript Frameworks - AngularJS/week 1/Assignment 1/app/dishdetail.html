@@ -44,8 +44,17 @@
                 </div>
             </div>
             <div class="col-xs-9 col-xs-offset-1">
+                <h3>
+                    <strong>Customer Comments</strong>
+                    <small>
+                        Sorted by: <input type="text" ng-model="dishDetailCtrl.sortBy">
+                    </small>
+                </h3>              
+            </div>
+            <div class="col-xs-9 col-xs-offset-1">
                 <ul class="media-list">
-                    <li class="media" ng-repeat="comment in dishDetailCtrl.dish.comments">
+                    <li class="media" 
+                    ng-repeat="comment in dishDetailCtrl.dish.comments | orderBy:dishDetailCtrl.sortBy">
                         <blockquote>
                             <p>{{comment.rating}} Stars</p>
                             <p>{{comment.comment}}</p>
@@ -64,6 +73,8 @@
         var app = angular.module('confusionApp',[]);
         
         app.controller('dishDetailController', function() {
+
+            this.sortBy = '';
 
             var dish={
                           name:'Uthapizza',
