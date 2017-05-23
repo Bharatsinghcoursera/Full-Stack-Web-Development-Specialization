@@ -80,3 +80,9 @@ typings/
 */mongodb/data/diagnostic.data
 */mongodb/data/journal
 */mongodb/data/WiredTiger
+
+# temporal grunt directory
+.tmp/
+
+# app distribution directory
+dist/
