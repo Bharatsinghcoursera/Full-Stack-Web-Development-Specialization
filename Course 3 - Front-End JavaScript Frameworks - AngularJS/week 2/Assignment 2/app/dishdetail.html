@@ -63,9 +63,16 @@
                             <footer>{{comment.author}}, {{comment.date | date}}</footer>
                         </blockquote>
                     </li>
+                    <li class="media" ng-show="!commentForm.$invalid">
+                        <blockquote>
+                            <p>{{comment.rating}} Stars</p>
+                            <p>{{comment.comment}}</p>
+                            <footer>{{comment.author}}</footer>
+                        </blockquote>
+                    </li>
                 </ul>
                 <form class="form-horizontal" name="commentForm"
-                		ng-submit="submitComment()" novalidate>
+                		ng-submit="submitComment()" novalidate>           
                     <div class="form-group" ng-class="{ 'has-error' : commentForm.name.$error.required && !commentForm.name.$pristine }">
                         <label for="name" class="col-sm-2 control-label">Your Name</label>                        <div class="col-sm-10">
                             <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name"
