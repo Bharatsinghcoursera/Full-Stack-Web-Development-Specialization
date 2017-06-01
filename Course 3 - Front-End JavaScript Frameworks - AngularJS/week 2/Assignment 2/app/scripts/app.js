@@ -90,7 +90,7 @@ angular.module('confusionApp', [])
                 
                 console.log($scope.feedback);
                 
-                if ($scope.feedback.agree && ($scope.feedback.mychannel == "")) {
+                if ($scope.feedback.agree && ($scope.feedback.mychannel === "")) {
                     $scope.invalidChannelSelection = true;
                     console.log('incorrect');
                 }
@@ -149,6 +149,8 @@ angular.module('confusionApp', [])
                     };
             
             $scope.dish = dish;
+
+            $scope.sortBy = '';
             
         }])
 
@@ -159,7 +161,7 @@ angular.module('confusionApp', [])
             $scope.submitComment = function () {
                 
                 //Step 2: This is how you record the date
-                "The date property of your JavaScript object holding the comment" = new Date().toISOString();
+                //"The date property of your JavaScript object holding the comment" = new Date().toISOString();
                 
                 // Step 3: Push your comment into the dish's comment array
                 $scope.dish.comments.push("Your JavaScript Object holding the comment");
@@ -167,7 +169,7 @@ angular.module('confusionApp', [])
                 //Step 4: reset your form to pristine
                 
                 //Step 5: reset your JavaScript object that holds your comment
-            }
+            };
         }])
 
 ;
