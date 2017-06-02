@@ -1,12 +1,8 @@
 'use strict';
 
 angular.module('confusionApp', ['ngRoute'])
-    
-    .config(['$locationProvider', function ($locationProvider) {
-        $locationProvider.hashPrefix("");
-    }])
 
-    .config(function ($routeProvider) {
+    .config(function ($routeProvider, $locationProvider) {
         $routeProvider
             // route for the contactus page
             .when('/contactus', {
@@ -24,4 +20,6 @@ angular.module('confusionApp', ['ngRoute'])
                 controller: 'DishDetailController'
             })
             .otherwise('/contactus');
+        
+        $locationProvider.hashPrefix("");
     });
