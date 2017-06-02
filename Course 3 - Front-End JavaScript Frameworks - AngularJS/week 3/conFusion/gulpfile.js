@@ -15,36 +15,6 @@ var gulp = require('gulp'),
     ngannotate = require('gulp-ng-annotate'),
     del = require('del');
 
-// fetch command line arguments
-const arg = (argList => {
-
-  let arg = {}, a, opt, thisOpt, curOpt;
-  for (a = 0; a < argList.length; a++) {
-
-    thisOpt = argList[a].trim();
-    opt = thisOpt.replace(/^\-+/, '');
-
-    if (opt === thisOpt) {
-
-      // argument value
-      if (curOpt) arg[curOpt] = opt;
-      curOpt = null;
-
-    }
-    else {
-
-      // argument name
-      curOpt = opt;
-      arg[curOpt] = true;
-
-    }
-
-  }
-
-  return arg;
-
-})(process.argv);
-
 gulp.task('jshint', function() {
     return gulp.src('app/scripts/**/*.js')
     .pipe(jshint())
@@ -104,10 +74,9 @@ gulp.task('browser-sync', ['default'], function () {
    ];
 
    browserSync.init(files, {
-      server: {
-         baseDir: "dist"
-       },
-       startPath: (arg.startPath || arg.sp || "index") + ".html"
+     server: {
+       baseDir: "dist"
+     }
    });
         // Watch any files in dist/, reload on change
   gulp.watch(['dist/**']).on('change', browserSync.reload);
