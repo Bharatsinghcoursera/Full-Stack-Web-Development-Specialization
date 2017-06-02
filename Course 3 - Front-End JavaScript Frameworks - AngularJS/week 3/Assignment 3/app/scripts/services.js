@@ -201,7 +201,7 @@ angular.module('confusionApp')
             
             return promotions[index];
 
-        }    
+        }; 
                         
     })
 
@@ -245,13 +245,13 @@ angular.module('confusionApp')
 
             return leadership;
 
-        }   
+        };
 
         corpfac.getLeader = function (index) {
             
             return leadership[index];
-            
-        }
+
+        };
 
         return corpfac;
 
