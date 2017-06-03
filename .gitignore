@@ -81,8 +81,8 @@ typings/
 */mongodb/data/journal
 */mongodb/data/WiredTiger
 
-# temporal grunt directory
-.tmp/
-
 # app distribution directory
 dist/
+
+# app deploy directory
+**/json-server/public
