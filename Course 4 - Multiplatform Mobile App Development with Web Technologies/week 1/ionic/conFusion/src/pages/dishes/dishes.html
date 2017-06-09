@@ -3,10 +3,14 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>Dishes</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-    <h1>Ristorante con Fusion</h1>
+  <ion-list>
+    <button ion-item *ngFor="let dish of dishes" (click)="itemTapped($event, dish)">
+      {{dish.name}}
+    </button>
+  </ion-list>
 </ion-content>
