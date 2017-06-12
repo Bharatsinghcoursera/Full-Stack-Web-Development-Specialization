@@ -24,21 +24,18 @@ export class HomePage {
     .subscribe(
       data => this.dish = data,
       error => console.error('Error: ' + error),
-      () => console.log('Completed!')
     );
 
     this.appService.getPromotion(0)
     .subscribe(
       data => this.promotion = data,
       error => console.error('Error: ' + error),
-      () => console.log('Completed!')
     );
 
     this.appService.getLeader(3)
     .subscribe(
       data => this.leader = data,
       error => console.error('Error: ' + error),
-      () => console.log('Completed!')
     );
   }
 
