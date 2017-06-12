@@ -31,26 +31,27 @@ $colors: (
   dark:       #222
 );
 
-$toolbar-background: #1a237e;
+$brand-color: #1a237e;
+$toolbar-background: $brand-color;
 
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
-
+$tabs-ios-tab-color-active: $brand-color;
 
 
 
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
-
+$tabs-md-tab-color-active: $brand-color;
 
 
 
 // App Windows Variables
 // --------------------------------------------------
 // Windows only Sass variables can go here
-
+$tabs-wp-tab-color-active: $brand-color;
 
 
 

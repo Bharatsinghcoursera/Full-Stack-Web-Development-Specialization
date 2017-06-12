@@ -1,30 +1,50 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component, Pipe, PipeTransform } from '@angular/core';
+import { NavController, NavParams, App } from 'ionic-angular';
+
+import { AppService } from '../../app/app.service';
+import { AppSetting } from '../../app/app.setting';
 
 import { DishdetailsPage } from '../dishdetails/dishdetails';
 
+@Pipe({
+    name: 'DishPipe',
+    pure: false
+})
+export class DishPipe implements PipeTransform {
+    transform(dishes: any[], category: Object): any {
+        if (!dishes || !category || category === '') {
+            return dishes;
+        }
+        
+        return dishes.filter(dish => dish.category === category);
+    }
+}
+
 @Component({
   selector: 'page-dishes',
-  templateUrl: 'dishes.html',
+  templateUrl: 'dishes.html'
 })
 export class DishesPage {
 
-  dishes: Array<{ name: string }>;
+  baseUrl: string = AppSetting.BASE_URL;  
+  dishes: any;
+  filtText: string = '';
+
+  constructor(public navCtrl: NavController, public appService: AppService, public navParams: NavParams, public app: App) {
+    this.filtText = navParams.data; 
+  }
   
-  constructor(public navCtrl: NavController) {
-
-    this.dishes = [];
-    for (let i = 1; i < 11; i++) {
-      this.dishes.push({
-        name: 'Dish ' + i
-      });
-    }
-
+  ngOnInit(){
+    this.appService.getDishes()
+      .subscribe(
+        data => this.dishes = data,
+        error => console.error('Error: ' + error),
+        () => console.log('Completed!')
+      );
   }
 
   itemTapped(event, dish) {
-
-    this.navCtrl.push(DishdetailsPage, {
+    this.app.getRootNav().push(DishdetailsPage, {
       dish: dish
     });
     

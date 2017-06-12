@@ -6,11 +6,16 @@
     <ion-title>Dishes</ion-title>
   </ion-navbar>
 </ion-header>
-
-<ion-content padding>
+<ion-content>
   <ion-list>
-    <button ion-item *ngFor="let dish of dishes" (click)="itemTapped($event, dish)">
-      {{dish.name}}
+    <button ion-item *ngFor="let dish of dishes | DishPipe:filtText" (click)="itemTapped($event, dish)">
+      <ion-thumbnail item-start>
+        <img src="{{baseUrl+dish.image}}"/>
+      </ion-thumbnail>
+      <h1>{{dish.name}}</h1>
+      <ion-badge color="danger">{{dish.label}}</ion-badge>
+      <ion-badge>{{dish.price | currency}}</ion-badge>
+      <p>{{dish.description}}</p>
     </button>
   </ion-list>
 </ion-content>

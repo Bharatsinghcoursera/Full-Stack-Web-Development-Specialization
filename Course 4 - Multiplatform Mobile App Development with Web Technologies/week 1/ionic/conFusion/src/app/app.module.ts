@@ -7,8 +7,9 @@ import { MyApp } from './app.component';
 import { AppService } from './app.service';
 import { HomePage } from '../pages/home/home';
 import { AboutusPage } from '../pages/aboutus/aboutus';
-import { DishesPage } from '../pages/dishes/dishes';
-import { DishdetailsPage } from '../pages/dishdetails/dishdetails';
+import { MenuPage } from '../pages/menu/menu';
+import { DishesPage, DishPipe } from '../pages/dishes/dishes';
+import { DishdetailsPage, OrderByPipe } from '../pages/dishdetails/dishdetails';
 import { ContactusPage } from '../pages/contactus/contactus';
 
 
@@ -20,9 +21,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     AboutusPage,
+    MenuPage,
     DishesPage,
     DishdetailsPage,
-    ContactusPage
+    ContactusPage,
+    DishPipe,
+    OrderByPipe
   ],
   imports: [
     BrowserModule,
@@ -34,6 +38,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     AboutusPage,
+    MenuPage,
     DishesPage,
     DishdetailsPage,
     ContactusPage
