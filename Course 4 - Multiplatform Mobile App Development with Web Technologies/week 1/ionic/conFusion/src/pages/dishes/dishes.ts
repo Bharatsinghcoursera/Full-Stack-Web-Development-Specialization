@@ -39,7 +39,6 @@ export class DishesPage {
       .subscribe(
         data => this.dishes = data,
         error => console.error('Error: ' + error),
-        () => console.log('Completed!')
       );
   }
 

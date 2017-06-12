@@ -24,7 +24,12 @@ export class AppService {
       .map(response => response.json());
   }
 
-   getLeader(id: number) {
+  getLeadership() {
+    return this.http.get(`${AppSetting.BASE_URL}leadership`)
+      .map(response => response.json());
+  }
+
+  getLeader(id: number) {
     return this.http.get(`${AppSetting.BASE_URL}leadership/${id}`)
       .map(response => response.json());
   }
