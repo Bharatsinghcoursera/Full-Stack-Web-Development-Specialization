@@ -11,7 +11,8 @@ import { MenuPage } from '../pages/menu/menu';
 import { DishesPage, DishPipe } from '../pages/dishes/dishes';
 import { DishdetailsPage, OrderByPipe } from '../pages/dishdetails/dishdetails';
 import { ContactusPage } from '../pages/contactus/contactus';
-
+import { LoginPage } from '../pages/login/login';
+import { ReservePage } from '../pages/reserve/reserve';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -26,7 +27,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     DishdetailsPage,
     ContactusPage,
     DishPipe,
-    OrderByPipe
+    OrderByPipe,
+    LoginPage,
+    ReservePage
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MenuPage,
     DishesPage,
     DishdetailsPage,
-    ContactusPage
+    ContactusPage,
+    LoginPage,
+    ReservePage
   ],
   providers: [
     StatusBar,

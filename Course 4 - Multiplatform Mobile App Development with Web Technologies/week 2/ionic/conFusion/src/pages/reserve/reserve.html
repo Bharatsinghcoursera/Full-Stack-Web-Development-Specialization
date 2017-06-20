@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Reserve Table
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span ion-text>Close</span>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form (ngSubmit)="doReservation()">
+    <ion-list>
+      <ion-item>
+        <ion-label color="primary">Number of Guests</ion-label>
+        <ion-select [(ngModel)]="reservation.numGuests" name="numGuests">
+          <ion-option *ngFor="let n of [1,2,3,4,5,6]" value="{{n}}">{{n}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary">Smoking?</ion-label>
+        <ion-toggle [(ngModel)]="reservation.smoking" name="smoking"></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary">Date</ion-label>
+        <ion-input type="date" [(ngModel)]="reservation.date" name="date"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary">Time</ion-label>
+        <ion-input type="time" [(ngModel)]="reservation.time" name="time"></ion-input>
+      </ion-item>
+    </ion-list>
+    <button ion-button block type="submit">Reserve</button>
+  </form>
+</ion-content>

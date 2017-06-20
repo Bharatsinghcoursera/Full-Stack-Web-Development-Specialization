@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav, Platform, ModalController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -7,6 +7,9 @@ import { HomePage } from '../pages/home/home';
 import { AboutusPage } from '../pages/aboutus/aboutus';
 import { MenuPage } from '../pages/menu/menu';
 import { ContactusPage } from '../pages/contactus/contactus';
+import { LoginPage } from '../pages/login/login';
+import { ReservePage } from '../pages/reserve/reserve';
+
 
 
 @Component({
@@ -16,10 +19,13 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = HomePage;
+  loginModal: any = LoginPage;
+  reserveModal: any = ReservePage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{ title: string, component: any }>;
+  modals: Array<{ title: string, component: any }>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public modalCtrl: ModalController) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -27,7 +33,12 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'About Us', component: AboutusPage },
       { title: 'Menu', component: MenuPage },
-      { title: 'Contact Us', component: ContactusPage }
+      { title: 'Contact Us', component: ContactusPage },
+    ];
+
+    this.modals = [
+      { title: 'Login', component: LoginPage },
+      { title: 'Reserve Table', component: ReservePage }
     ];
 
   }
@@ -45,5 +56,10 @@ export class MyApp {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
+  }
+
+  openModal(modalPage) {
+    let modal = this.modalCtrl.create(modalPage.component);
+    modal.present();
   }
 }

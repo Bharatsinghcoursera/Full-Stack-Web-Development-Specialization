@@ -10,6 +10,9 @@
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
       </button>
+      <button menuClose ion-item *ngFor="let m of modals" (click)="openModal(m)">
+        {{m.title}}
+      </button>
     </ion-list>
   </ion-content>
 
