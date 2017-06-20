@@ -1,5 +1,5 @@
 import { Component, Pipe, PipeTransform } from '@angular/core';
-import { NavController, NavParams, App } from 'ionic-angular';
+import { NavController, NavParams, App, ItemSliding } from 'ionic-angular';
 
 import { AppService } from '../../app/app.service';
 import { AppSetting } from '../../app/app.setting';
@@ -42,11 +42,20 @@ export class DishesPage {
       );
   }
 
-  itemTapped(event, dish) {
+  showMore(event, dish, slidingItem: ItemSliding) {
+    slidingItem.close();
     this.app.getRootNav().push(DishdetailsPage, {
       dish: dish
     });
-    
+  }
+
+  addFavorite(event, dish, slidingItem: ItemSliding) {
+    let res = this.appService.addFavorite(dish.id)
+      .subscribe(
+      data => console.log(data),
+      error => console.error('Error: ' + error),  
+    );
+    slidingItem.close();
   }
 
 }
