@@ -9,6 +9,7 @@ import { MenuPage } from '../pages/menu/menu';
 import { ContactusPage } from '../pages/contactus/contactus';
 import { LoginPage } from '../pages/login/login';
 import { ReservePage } from '../pages/reserve/reserve';
+import { FavoritesPage } from '../pages/favorites/favorites';
 
 
 
@@ -34,6 +35,7 @@ export class MyApp {
       { title: 'About Us', component: AboutusPage },
       { title: 'Menu', component: MenuPage },
       { title: 'Contact Us', component: ContactusPage },
+      { title: 'My Favorites', component: FavoritesPage}
     ];
 
     this.modals = [

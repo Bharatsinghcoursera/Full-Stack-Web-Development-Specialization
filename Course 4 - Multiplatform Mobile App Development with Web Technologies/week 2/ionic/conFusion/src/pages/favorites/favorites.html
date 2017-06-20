@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>My Favorites</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item-sliding #slidingItem *ngFor="let dish of dishes | FavoritePipe:favorites">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="{{baseUrl+dish.image}}"/>
+        </ion-thumbnail>
+        <h1>{{dish.name}}</h1>
+        <ion-badge color="danger">{{dish.label}}</ion-badge>
+        <ion-badge>{{dish.price | currency}}</ion-badge>
+        <p>{{dish.description}}</p>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="deleteFavorite($event, dish, slidingItem)">
+          <ion-icon name="remove-circle"></ion-icon>
+          Remove
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

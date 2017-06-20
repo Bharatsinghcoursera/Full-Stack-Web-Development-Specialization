@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response, RequestOptions, Headers } from '@angular/http';
+import { Http, RequestOptions, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 
@@ -35,10 +35,22 @@ export class AppService {
       .map(response => response.json());
   }
 
+  getFavorites() {
+    return this.http.get(`${AppSetting.BASE_URL}favorites`)
+      .map(response => response.json());
+  }
+  
   addFavorite(dishId: number): Observable<any> {
     let headers = new Headers({'Content-Type': 'application/json'});
     let options = new RequestOptions({ headers: headers });
     return this.http.post(`${AppSetting.BASE_URL}favorites`, { dishId }, options)
+      .map(response => response.json());
+  }
+
+  deleteFavorite(dishId: number): Observable<any> {
+    let headers = new Headers({'Content-Type': 'application/json'});
+    let options = new RequestOptions({ headers: headers });
+    return this.http.delete(`${AppSetting.BASE_URL}favorites/${dishId}`, options)
       .map(response => response.json());
   }
   

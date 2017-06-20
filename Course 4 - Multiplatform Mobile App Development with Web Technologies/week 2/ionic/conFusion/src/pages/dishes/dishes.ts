@@ -50,7 +50,7 @@ export class DishesPage {
   }
 
   addFavorite(event, dish, slidingItem: ItemSliding) {
-    let res = this.appService.addFavorite(dish.id)
+    this.appService.addFavorite(dish.id)
       .subscribe(
       data => console.log(data),
       error => console.error('Error: ' + error),  
