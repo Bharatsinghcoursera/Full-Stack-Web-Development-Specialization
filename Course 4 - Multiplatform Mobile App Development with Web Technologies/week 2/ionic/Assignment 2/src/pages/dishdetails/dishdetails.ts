@@ -54,7 +54,7 @@ export class DishdetailsPage {
   }
 
   presentPopover(myEvent) {
-    let popover = this.popoverCtrl.create(DishdetailsPopoverPage);
+    let popover = this.popoverCtrl.create(DishdetailsPopoverPage, { dish: this.selectedDish });
     popover.present({
       ev: myEvent
     });
