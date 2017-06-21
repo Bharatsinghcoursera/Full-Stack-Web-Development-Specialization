@@ -42,14 +42,14 @@ export class DishesPage {
       );
   }
 
-  showMore(event, dish, slidingItem: ItemSliding) {
+  showMore(dish, slidingItem: ItemSliding) {
     slidingItem.close();
     this.app.getRootNav().push(DishdetailsPage, {
       dish: dish
     });
   }
 
-  addFavorite(event, dish, slidingItem: ItemSliding) {
+  addFavorite(dish, slidingItem: ItemSliding) {
     this.appService.addFavorite(dish.id)
       .subscribe(
       data => console.log(data),

@@ -19,11 +19,11 @@
         <p>{{dish.description}}</p>
       </ion-item>
       <ion-item-options side="right">
-        <button ion-button color="dark" (click)="showMore($event, dish, slidingItem)">
+        <button ion-button color="dark" (click)="showMore(dish, slidingItem)">
           <ion-icon name="more"></ion-icon>
           More
         </button>
-        <button ion-button color="danger" (click)="addFavorite($event, dish, slidingItem)">
+        <button ion-button color="danger" (click)="addFavorite(dish, slidingItem)">
           <ion-icon name="add-circle"></ion-icon>
           Favorite
         </button>
