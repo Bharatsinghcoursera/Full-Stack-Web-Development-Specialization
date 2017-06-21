@@ -20,6 +20,13 @@ export class AppService {
       .map(response => response.json());
   }
 
+  updateDish(dish: any) {
+    let headers = new Headers({'Content-Type': 'application/json'});
+    let options = new RequestOptions({ headers: headers });
+    return this.http.put(`${AppSetting.BASE_URL}dishes/${dish.id}`, dish, options)
+      .map(response => response.json());
+  }
+
   getPromotion(id: number) {
     return this.http.get(`${AppSetting.BASE_URL}promotions/${id}`)
       .map(response => response.json());
