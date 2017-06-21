@@ -10,6 +10,7 @@ import { AboutusPage } from '../pages/aboutus/aboutus';
 import { MenuPage } from '../pages/menu/menu';
 import { DishesPage, DishPipe } from '../pages/dishes/dishes';
 import { DishdetailsPage, OrderByPipe } from '../pages/dishdetails/dishdetails';
+import { DishdetailsPopoverPage } from '../pages/dishdetails/popover';
 import { ContactusPage } from '../pages/contactus/contactus';
 import { LoginPage } from '../pages/login/login';
 import { ReservePage } from '../pages/reserve/reserve';
@@ -26,6 +27,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MenuPage,
     DishesPage,
     DishdetailsPage,
+    DishdetailsPopoverPage,
     ContactusPage,
     DishPipe,
     OrderByPipe,
@@ -47,6 +49,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MenuPage,
     DishesPage,
     DishdetailsPage,
+    DishdetailsPopoverPage,
     ContactusPage,
     LoginPage,
     ReservePage,

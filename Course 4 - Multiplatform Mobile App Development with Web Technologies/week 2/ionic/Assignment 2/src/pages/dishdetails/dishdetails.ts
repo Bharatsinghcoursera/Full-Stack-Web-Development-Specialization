@@ -1,7 +1,9 @@
 import { Component, Pipe, PipeTransform } from '@angular/core';
-import { NavParams } from 'ionic-angular';
+import { NavParams, PopoverController } from 'ionic-angular';
 
 import { AppSetting } from '../../app/app.setting';
+
+import { DishdetailsPopoverPage } from './popover';
 
 @Pipe({
   name: "OrderByPipe"
@@ -45,10 +47,17 @@ export class DishdetailsPage {
   selectedDish: any; 
   orderText = "";
 
-  constructor(public navParams: NavParams) {
+  constructor(public navParams: NavParams, public popoverCtrl: PopoverController) {
     
     this.selectedDish = navParams.get('dish');
     
+  }
+
+  presentPopover(myEvent) {
+    let popover = this.popoverCtrl.create(DishdetailsPopoverPage);
+    popover.present({
+      ev: myEvent
+    });
   }
 
 }
