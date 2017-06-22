@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngIf="dish">
+    <ion-card-title padding>
+      Our Lipsmacking Culinary Creations
+    </ion-card-title>
+    <ion-item>
+      <ion-thumbnail item-start>
+          <img src="{{baseUrl+dish.image}}"/>
+      </ion-thumbnail>
+      <h1>{{dish.name}}</h1>
+      <ion-badge color="danger">{{dish.label}}</ion-badge>
+      <ion-badge>{{dish.price | currency}}</ion-badge>
+    </ion-item>
+    <ion-card-content>   
+      <p>
+        {{dish.description}}
+      </p>
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngIf="promotion">
+    <ion-card-title padding>
+      This Month's Promotions
+    </ion-card-title>
+    <ion-item>
+      <ion-thumbnail item-start>
+          <img src="{{baseUrl+promotion.image}}"/>
+      </ion-thumbnail>
+      <h2 text-wrap>{{promotion.name}}</h2>
+      <ion-badge color="danger">{{promotion.label}}</ion-badge>
+      <ion-badge>{{promotion.price | currency}}</ion-badge>
+    </ion-item>
+    <ion-card-content>   
+      <p>
+        {{promotion.description}}
+      </p>
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngIf="leader">
+    <ion-card-title padding>
+      Meet our Culinary Specialists
+    </ion-card-title>
+    <ion-item>
+      <ion-thumbnail item-start>
+          <img src="{{baseUrl+leader.image}}"/>
+      </ion-thumbnail>
+      <h2 text-wrap>{{leader.name}}</h2>
+      <p>{{leader.designation}}</p>
+    </ion-item>
+    <ion-card-content>   
+      <p>
+        {{leader.description}}
+      </p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Dishes</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item-sliding #slidingItem *ngFor="let dish of dishes | DishPipe:filtText">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="{{baseUrl+dish.image}}"/>
+        </ion-thumbnail>
+        <h1>{{dish.name}}</h1>
+        <ion-badge color="danger">{{dish.label}}</ion-badge>
+        <ion-badge>{{dish.price | currency}}</ion-badge>
+        <p>{{dish.description}}</p>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="dark" (click)="showMore(dish, slidingItem)">
+          <ion-icon name="more"></ion-icon>
+          More
+        </button>
+        <button ion-button color="danger" (click)="addFavorite(dish, slidingItem)">
+          <ion-icon name="add-circle"></ion-icon>
+          Favorite
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Login
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span ion-text>Close</span>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form (ngSubmit)="doLogin()">
+    <ion-list>
+      <ion-item>
+        <ion-label color="primary">Username</ion-label>
+        <ion-input [(ngModel)]="login.username" name="username"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary">Password</ion-label>
+        <ion-input type="password" [(ngModel)]="login.password" name="password"></ion-input>
+      </ion-item>
+    </ion-list>
+    <button ion-button block type="submit">Log In</button>
+  </form>
+</ion-content>
